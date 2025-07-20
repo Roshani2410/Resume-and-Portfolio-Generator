@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Form</title>
+  <style>
+    :root {
+      --bg-color: #1e3c72;
+      --text-color: #ffffff;
+      --form-bg: rgba(255, 255, 255, 0.1);
+      --input-bg: #f0f0f0;
+      --btn-bg: #00c6ff;
+      --btn-hover: #0086c3;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --form-bg: #ffffff;
+      --input-bg: #f4f4f4;
+      --btn-bg: #1e90ff;
+      --btn-hover: #005fa3;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, var(--bg-color), #2a5298);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .form-box {
+      background-color: var(--form-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--input-bg);
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--btn-bg);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: transparent;
+      color: var(--text-color);
+      border: 2px solid var(--text-color);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn" onclick="toggleTheme()">Toggle Mode</button>
+
+  <div class="form-box">
+    <h2>Resume Form</h2>
+    <form method="POST" action="/resume/show">
+      <label for="name">Name</label>
+      <input type="text" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" required>
+
+      
+      <label for="skills">Skills</label>
+      <input type="text" name="skills" required>
+
+      <label for="experience">Experience</label>
+      <textarea name="experience" rows="3"></textarea>
+
+      <label for="education">Education</label>
+      <textarea name="education" rows="2"></textarea>
+
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>

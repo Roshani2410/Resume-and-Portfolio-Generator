@@ -1,0 +1,92 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .register-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 0.7rem;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      color: #1e3c72;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-box">
+    <h2>Register</h2>
+    <form method="POST" action="{{ url_for('register') }}">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="education">Education</label>
+      <input type="text" name="education" id="education" required>
+
+      <label for="experience">Experience</label>
+      <input type="text" name="experience" id="experience" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" name="phone" id="phone" required>
+
+      <label for="skills">Skills</label>
+      <input type="text" name="skills" id="skills" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>

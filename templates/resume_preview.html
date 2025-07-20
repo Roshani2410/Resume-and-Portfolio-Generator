@@ -1,0 +1,37 @@
+<!-- templates/resume_preview.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Resume</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #fff; color: #333; }
+        h1 { font-size: 32px; }
+        p { margin: 5px 0; }
+        .section { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    <div class="section">
+        <h3>Education</h3>
+        <p>{{ education }}</p>
+    </div>
+    <div class="section">
+        <h3>Experience</h3>
+        <p>{{ experience }}</p>
+    </div>
+    <div class="section">
+        <h3>Skills</h3>
+        <p>{{ skills }}</p>
+    </div>
+
+    <form action="{{ url_for('download_pdf') }}" method="POST">
+        {% for key, value in data.items() %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+        <button type="submit">Download as PDF</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Template Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #5abadc, #feffff);
+      color: rgb(254, 254, 254);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.7rem;
+      background-color: #00c6ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0086c3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Enter Your Resume Details</h2>
+    <form method="POST" action="/resume/show">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" required>
+
+      <label for="skills">Skills (comma separated)</label>
+      <input type="text" name="skills" required>
+
+      <label for="experience">Experience</label>
+      <textarea name="experience"></textarea>
+
+      <label for="education">Education</label>
+      <textarea name="education"></textarea>
+
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+
+</body>
+</html>

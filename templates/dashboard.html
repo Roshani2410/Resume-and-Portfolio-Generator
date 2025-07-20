@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dark-gradient">
+    <div class="container center-text">
+        <h1 class="main-heading">Resume & Portfolio Generator</h1>
+
+        <div class="button-group">
+            <a href="{{ url_for('resume_templates_view') }}" class="btn">Generate Resume</a>
+            <a href="{{ url_for('portfolio') }}" class="btn">Generate Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>

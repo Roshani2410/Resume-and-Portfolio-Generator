@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dark-gradient">
+    <div class="container">
+        <h1 class="center-text">Your Resume</h1>
+        <div class="resume-box">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Phone:</strong> {{ phone }}</p>
+            <p><strong>Education:</strong> {{ education }}</p>
+            <p><strong>Experience:</strong> {{ experience }}</p>
+            <p><strong>Skills:</strong> {{ skills }}</p>
+        </div>
+
+        <!-- Save as PDF Button -->
+        <div class="center-text no-print" style="margin-top: 30px;">
+            <button onclick="window.print()" class="btn">Save as PDF</button>
+        </div>
+    </div>
+</body>
+</html>
